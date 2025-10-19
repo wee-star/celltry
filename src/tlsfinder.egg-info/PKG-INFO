@@ -1,0 +1,29 @@
+Metadata-Version: 2.4
+Name: tlsfinder
+Version: 0.1.0
+Summary: A spatial transcriptomics analysis toolkit for TLS
+Author-email: He Yifei <u202313685@hust.edu.cn>
+Requires-Python: <3.13,>=3.8
+License-File: LICENSE
+Requires-Dist: scanpy>=1.11.0
+Requires-Dist: anndata>=0.11.0
+Requires-Dist: squidpy>=1.6.0
+Requires-Dist: cellcharter>=0.3.5
+Requires-Dist: pandas>=2.3.0
+Requires-Dist: numpy>=2.2.0
+Requires-Dist: matplotlib>=3.10.0
+Requires-Dist: scikit-learn>=1.7.0
+Requires-Dist: scipy>=1.15.0
+Requires-Dist: seaborn>=0.13.0
+Requires-Dist: pillow>=11.0.0
+Requires-Dist: torch>=2.8.0
+Requires-Dist: torchvision>=0.23.0
+Requires-Dist: tifffile>=2025.5.10
+Requires-Dist: networkx>=3.4.0
+Requires-Dist: geopandas>=1.1.0
+Requires-Dist: h5py>=3.14.0
+Requires-Dist: statsmodels>=0.14.0
+Requires-Dist: umap-learn
+Requires-Dist: session-info2
+Requires-Dist: scvi-tools>=1.3.0
+Dynamic: license-file
