@@ -5,11 +5,17 @@ import numpy as np
 def plot_tls_blocks_on_HE(
     block_dict,
     fill_color=(225/255, 80/255, 160/255, 0.5),
-    grid_size=800
+    grid_size=800,
+    save_path=None,
+    show=True,
+    close=True
 ):
     """
     可视化高分区域聚类分块与HE底图轮廓。
     block_dict: gr/_nhood.py tls_dbscan_blocks返回的结果
+    save_path: 保存路径（如 'img/foo.svg'），为None时不保存
+    show: 是否plt.show()
+    close: 是否关闭figure
     """
     all_pts = block_dict['pts']
     all_contours = block_dict['contours']
@@ -41,15 +47,26 @@ def plot_tls_blocks_on_HE(
         ax.set_title(f"{lib_id} TLS region", fontsize=14)
         ax.axis('off')
     plt.tight_layout()
-    plt.show()
+    if save_path is not None:
+        plt.savefig(save_path, format=save_path.split('.')[-1], bbox_inches="tight")
+    if show:
+        plt.show()
+    if close:
+        plt.close(fig)
 
 def plot_tls_blocks_labeled(
     block_dict,
     grid_size=800,
-    cmap_name='tab10'
+    cmap_name='tab10',
+    save_path=None,
+    show=True,
+    close=True
 ):
     """
     分块区域着色并编号可视化。
+    save_path: 保存路径（如 'img/bar.svg'），为None时不保存
+    show: 是否plt.show()
+    close: 是否关闭figure
     """
     from skimage.measure import label, regionprops
     from matplotlib import cm
@@ -95,4 +112,9 @@ def plot_tls_blocks_labeled(
         ax.set_title(f"{lib_id} TLS blocks", fontsize=14)
         ax.axis('off')
     plt.tight_layout()
-    plt.show()
+    if save_path is not None:
+        plt.savefig(save_path, format=save_path.split('.')[-1], bbox_inches="tight")
+    if show:
+        plt.show()
+    if close:
+        plt.close(fig)
